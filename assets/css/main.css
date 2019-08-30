@@ -37,19 +37,20 @@ header {
     width: 100%;
     position: relative;
     z-index: 1;
-    background-image: url(/fresher/assets/img/code-laptop.jpeg);
+    background-image: url(/fresher/assets/img/project1.jpeg);
     background-size: cover;
     background-position: center center;
+    background-attachment: fixed;
     min-height: calc(100vh - 60px);
 }
-header:before{
+header::before {
     content: "";
     position: absolute;
     right: 0;
     bottom: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(150deg, #281483 15%, #8f6ed5 70%, #d782d9 94%);
+    background: linear-gradient(150deg, #281483db 15%, #8f6ed5cc 70%, #d782d9c4 94%);
 }
 p {
     font-size: 16px;
@@ -57,6 +58,11 @@ p {
     line-height: 28px;
     color: #8a8fa3;
     margin: 0;
+}
+.hero-img img {
+    height: auto;
+    width: 100%;
+    margin-top: 50px;
 }
 #particles-js {
     position: absolute;
@@ -91,9 +97,6 @@ p {
 }
 .navbar .navbar-toggler.collapsed {
     background: transparent;
-}
-.navbar .navbar-toggler, .navbar .navbar-toggler:hover{
-    /*margin-top: 16px;*/
 }
 .navbar .navbar-toggler.collapsed .navbar-toggler-icon, .navbar .navbar-toggler .navbar-toggler-icon{
     color: #fff;
@@ -402,6 +405,7 @@ input:focus, textarea:focus{
     border: 1px solid #eee;
     padding: 30px 35px;
     transition: all .3s ease-out 0s;
+    overflow: auto;
 }
 .contact-box:hover {
     box-shadow: 0 0 21px 0 rgba(152,152,152,.23);
@@ -434,9 +438,12 @@ input:focus, textarea:focus{
     }
 
 }
-@media only screen and (max-width: 1200px) and (min-width: 992px){
+@media (min-width: 992px){
     .contact-box {
         padding: 30px 25px;
+    }
+    .featured-content-bottom{
+        margin-top: 70px;
     }
 }
 @media (min-width: 768px){
