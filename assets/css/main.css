@@ -297,7 +297,7 @@ div.info{
 #toTop {
     position: fixed;
     bottom: 40px;
-    right: 40px;
+    right: 25px;
     text-decoration: none;
     color: #fff !important;
     font-size: 20px;
