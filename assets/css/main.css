@@ -382,14 +382,19 @@ input:focus, textarea:focus{
     position: relative;
     left: 50%;
     top: 50%;
-    width: 80px;
-    height: 80px;
-    margin: -75px 0 0 -75px;
+    width: 50px;
+    height: 50px;
     border-radius: 50%;
-    border: 3px solid #eee;
+    border: 5px solid #eee;
     border-top-color: #281483;
+    border-right-color: var(--pink);
+    border-bottom-color: #754ef9;
     -webkit-animation: spin 2s linear infinite;
-    animation: spin 2s linear infinite;
+    animation: spin 1.5s linear infinite;
+}
+@keyframes spin {
+    from {transform:rotate(0deg);}
+    to {transform:rotate(360deg);}
 }
 #preloader {
     position: fixed;
@@ -421,59 +426,6 @@ input:focus, textarea:focus{
     font-size: 18px;
     font-weight: 600;
     padding-bottom: 15px;
-}
-@media (max-width: 768px){
-    .navbar{
-        padding: 0px 20px;
-        background: #281483;
-    }
-    .nav-item.active a, .nav-item:hover a {
-        color: var(--gray-dark) !important;
-    }
-
-}
-@media (max-width: 992px){
-    .info .col-md-6{
-        max-width: 100%;
-        flex: none;
-    }
-    .hidden-md{
-        display: none !Important;
-    }
-
-}
-@media (min-width: 992px){
-    .contact-box {
-        padding: 30px 25px;
-    }
-    .featured-content-bottom{
-        margin-top: 70px;
-    }
-}
-@media (min-width: 768px){
-    .navbar-fixed-top.scrolled{
-        background: linear-gradient(150deg, #281483 15%, #8f6ed5 70%, #d782d9 94%);
-        /*border-bottom: 1px solid #281483;*/
-    }
-    .navbar-expand-lg .navbar-collapse {
-        display: -ms-flexbox!important;
-        display: flex!important;
-        -ms-flex-preferred-size: auto;
-        flex-basis: auto;
-    }
-    .navbar-toggler{
-        display: none;
-    }
-    .navbar-expand-lg .navbar-nav {
-        flex-direction: row;
-    }
-    .navbar-expand-lg .navbar-nav .nav-link {
-        padding-right: .5rem;
-        padding-left: .5rem;
-    }
-    .contact-box {
-        padding: 30px 25px;
-    }
 }
 .map iframe {
     width: 100%;
@@ -596,4 +548,57 @@ a.footer-logo {
     -o-transition: all 2s ease-out 0s;
     transition: all 2s ease-out 0s;
     width: 0;
+}
+@media (max-width: 768px){
+    .navbar{
+        padding: 0px 20px;
+        background: #281483;
+    }
+    .nav-item.active a, .nav-item:hover a {
+        color: var(--gray) !important;
+    }
+
+}
+@media (max-width: 992px){
+    .info .col-md-6{
+        max-width: 100%;
+        flex: none;
+    }
+    .hidden-md{
+        display: none !Important;
+    }
+
+}
+@media (min-width: 992px){
+    .contact-box {
+        padding: 30px 25px;
+    }
+    .featured-content-bottom{
+        margin-top: 70px;
+    }
+}
+@media (min-width: 768px){
+    .navbar-fixed-top.scrolled{
+        background: linear-gradient(150deg, #281483 15%, #8f6ed5 70%, #d782d9 94%);
+        /*border-bottom: 1px solid #281483;*/
+    }
+    .navbar-expand-lg .navbar-collapse {
+        display: -ms-flexbox!important;
+        display: flex!important;
+        -ms-flex-preferred-size: auto;
+        flex-basis: auto;
+    }
+    .navbar-toggler{
+        display: none;
+    }
+    .navbar-expand-lg .navbar-nav {
+        flex-direction: row;
+    }
+    .navbar-expand-lg .navbar-nav .nav-link {
+        padding-right: .5rem;
+        padding-left: .5rem;
+    }
+    .contact-box {
+        padding: 30px 25px;
+    }
 }
