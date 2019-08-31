@@ -231,8 +231,6 @@ div.info{
     border: 1px solid #281483;
 }
 #services{
-    padding-top: 50px;
-    padding-bottom: 70px;
     background-color: var(--light);
 }
 .section-header{
@@ -318,9 +316,6 @@ div.info{
     padding: 5px 15px;
     transform: rotate(180deg);
 }
-.ptb-90{
-    padding: 90px 0;
-}
 .footer-address ul li i {
     color: #281483;
     margin-right: 5px;
@@ -343,6 +338,12 @@ input:focus, textarea:focus{
     box-shadow: none !Important;
     border-bottom: 2px solid var(--deepblue) !Important;
     padding-bottom: 2.475rem !Important;
+}
+.p-0{
+    padding: 0;
+}
+.m-0{
+    margin: 0;
 }
 .mt-30{
     margin-top: 30px;
@@ -376,6 +377,12 @@ input:focus, textarea:focus{
 }
 .pt-130 {
     padding-top: 130px;
+}
+.pt-90{
+    padding-top: 90px;
+}
+.ptb-90{
+    padding: 90px 0;
 }
 .single-form {
     margin-top: 30px;
@@ -551,6 +558,44 @@ a.footer-logo {
     -o-transition: all 2s ease-out 0s;
     transition: all 2s ease-out 0s;
     width: 0;
+}
+.tab-nav{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.tab-nav-item{
+    padding: 10px;
+    border: 1px solid var(--deepblue);
+    border-radius: 50px;
+    margin-right: 10px;
+}
+.tab-nav-item:hover, .tab-nav-item:active{
+    background: linear-gradient(150deg, #281483 15%, #8f6ed5 70%, #d782d9 94%);
+}
+.tab-nav-item:hover .nav-link, .tab-nav-item:active .nav-link{
+    color: var(--mainWhite);
+}
+.tab-nav-item .nav-link{
+    color: var(--deepblue);
+}
+.single-project img{
+    height: auto;
+    width: 100%;
+}
+#overlay{
+    padding-left: 0.71429rem !important;
+    padding-right: 0.71429rem !important;
+    display: none;
+    flex-flow: column nowrap;
+    justify-content: space-between;
+    background-color: rgba(114, 192, 45, 0.61);
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
 }
 @media (max-width: 768px){
     .navbar{

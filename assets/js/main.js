@@ -29,7 +29,7 @@ $(function () {
 			$(this).find(".icon-shape").css("border-radius", ".25rem");
 		}
 	);
-	
+
 	// Page scroll navigation
 	$(document).on('click', 'a.page-scroll', function(event) {
 		var $anchor = $(this);
@@ -59,7 +59,7 @@ $(function () {
 	$(window).ready(function() {
         $('#preloader').delay(500).fadeOut('fade');
 	});
-	
+
 	// Scroll to set active nav item
     $(window).scroll(function(){
     	var scrollbarLocation=$(this).scrollTop();
@@ -71,7 +71,7 @@ $(function () {
     		}
     	});
 	})
-	
+
 	// Progress line skills
     // if($('.progress-line').length){
     //     $('.progress-line').appear(function(){
