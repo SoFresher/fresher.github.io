@@ -427,6 +427,10 @@ input:focus, textarea:focus{
         padding: 0px 20px;
         background: #281483;
     }
+    .nav-item.active a, .nav-item:hover a {
+        color: var(--gray-dark) !important;
+    }
+
 }
 @media (max-width: 992px){
     .info .col-md-6{
