@@ -8,7 +8,13 @@ $(function () {
         let company = $("#company").val();
         let message = $("#message").val();
 
-        if (name == '' || email == '' || phone == '' || message == '') {
+        if (navigator.onLine == false){
+            if ($('.alert').hasClass('alert-success')) {
+                $('.alert').removeClass("alert-success");
+            }
+            $('.alert').addClass("show alert-danger");
+            $('.alert').children('.msg').html('It seems you are currently offline.');
+        } else if (name == '' || email == '' || phone == '' || company == '' || message == '') {
             if ($('.alert').hasClass('alert-success')) {
                 $('.alert').removeClass("alert-success");
             }
@@ -22,11 +28,26 @@ $(function () {
                 url: "server.php",
                 data: formData,
                 success: function (data) {
-                    if ($('.alert').hasClass('alert-danger')) {
-                        $('.alert').removeClass("alert-danger");
+                    console.log(data);
+                    if (data.sent == 1) {
+                        if ($('.alert').hasClass('alert-danger')) {
+                            $('.alert').removeClass("alert-danger");
+                        }
+                        $('.alert').addClass("show alert-success");
+                        $('.alert').children('.msg').html(data.success);
+                    } else if (data == '') {
+                        if ($('.alert').hasClass('alert-success')) {
+                            $('.alert').removeClass("alert-success");
+                        }
+                        $('.alert').addClass("show alert-danger");
+                        $('.alert').children('.msg').html('An error occured, try again later.');
+                    } else {
+                        if ($('.alert').hasClass('alert-success')) {
+                            $('.alert').removeClass("alert-success");
+                        }
+                        $('.alert').addClass("show alert-danger");
+                        $('.alert').children('.msg').html(data.error);
                     }
-                    $('.alert').addClass("show alert-success");
-                    $('.alert').children('.msg').html(data);
                 },
                 error: function (data) {
                     if ($('.alert').hasClass('alert-success')) {

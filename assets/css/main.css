@@ -420,7 +420,21 @@ input:focus, textarea:focus{
     border-top-color: #281483;
     /* border-right-color: var(--pink); */
     border-bottom-color: #754ef9;
-    -webkit-animation: spin 2s linear infinite;
+    -webkit-animation: spin 1.5s linear infinite;
+    animation: spin 1.5s linear infinite;
+}
+.ajax-loader{
+display: none;
+}
+.ajax-loader > div{ 
+    position: relative;
+    width: 30px;
+    height: 30px;
+    right: -50%;
+    border-radius: 50%;
+    border: 3px solid #eee;
+    border-bottom-color: #754ef9;
+    -webkit-animation: spin 1.5s linear infinite;
     animation: spin 1.5s linear infinite;
 }
 @keyframes spin {
@@ -586,16 +600,20 @@ a.footer-logo {
     justify-content: center;
     align-items: center;
 }
-.tab-nav-item .nav-link{
+.tab-nav-item .tab-link{
     padding: 10px;
     border: 1px solid var(--deepblue);
     border-radius: 50px;
     margin-right: 10px;
     color: var(--deepblue);
 }
-.tab-nav-item .nav-link:hover, .tab-nav-item .nav-link:active{
+.tab-nav-item .tab-link:hover, .tab-nav-item .tab-link:active, .nav-tab-active > a {
     background: linear-gradient(150deg, #281483 15%, #8f6ed5 70%, #d782d9 94%);
-    color: var(--mainWhite);
+    color: var(--mainWhite) !important;
+    border: 1px #fff !important;
+}
+.tab-nav-content .tab-nav-content-item:not(:first-child){
+    display: none;
 }
 .img-responsive{
     height: auto;
@@ -694,6 +712,19 @@ a.footer-logo {
 .show{
     display: block !important;
 }
+.single-project{
+    height: 100%;
+}
+.single-project .tag{
+    background-color: red;
+    color: var(--mainWhite);
+    padding: 2px 5px;
+    width: 30%;
+    position: relative;
+    font-size: 11px;
+    bottom: 80%;
+    left: 0;
+}
 @media (max-width: 768px){
     .navbar{
         padding: 0px 20px;
@@ -745,5 +776,14 @@ a.footer-logo {
     }
     .contact-box {
         padding: 30px 25px;
+    }
+}
+
+@media (max-width: 480px){
+    .navtab .tab-nav-item:not(:first-child){
+        display: none;
+    }
+    .tab-nav-content .tab-nav-content-item:not(:first-child){
+        display: none;
     }
 }
