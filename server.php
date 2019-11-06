@@ -1,4 +1,8 @@
 <?php
+// written by @fresher
+// 05/08/2019
+
+
 error_reporting(0);
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
