@@ -1,0 +1,112 @@
+ body{
+    font-family: 'Poppins', sans-serif;
+    padding: 50px;
+    border: 0;
+    outline: 0;
+    vertical-align: baseline;
+    background: transparent;
+    letter-spacing: 1px;
+}
+h1, h2, h3, h4, h5, h6{
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    letter-spacing: 3px;
+}
+a:hover{
+    text-decoration: none;
+}
+.wrapper{
+    text-align: center;
+}
+p,li{
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 28px;
+    color: #8a8fa3;
+    margin: 0;
+}
+.header h1{
+    border-top: 1px solid #3399CC;
+    border-bottom: 5px groove #3399CC;
+    font-size: 40px;
+    line-height: 70px;
+    color: #3399CC;
+}
+.address .email-phone{
+    margin: 10px 0;
+}
+.address .email-phone span{
+    background-color: #3399CC;
+    line-height: 20px;
+    padding: 5px 10px;
+    color: #fff;
+    font-size: 14px;
+    border: 1px solid #3399CC;
+    border-radius: 20px;
+}
+.address .profile{
+    margin-top: 15px;
+}
+.address .profile span{
+    background-color: #fff;
+    line-height: 20px;
+    padding: 5px 10px;
+    color: #3399CC;
+    font-size: 14px;
+    border: 2px solid #3399CC;
+    /* text-transform: uppercase; */
+}
+.content .content-item{
+    margin-top: 40px;
+    padding: 0 50px;
+}
+.content .content-item h3.content-item-header{
+    text-align: center;
+    font-weight: bold;
+    font-variant: small-caps;
+    font-size: 18px;
+    position: relative;
+    text-transform: uppercase;
+    color: #3399CC;
+
+}
+.content .content-item h3.content-item-header .section-title {
+    display: inline-block;
+    position: relative;
+    z-index: 5;
+    background: #FFF !important;
+    padding: 0 10px;
+}
+.content .content-item h3.content-item-header:before{
+    border-top: 1px solid #39C;
+    content: "";
+    display: block;
+    height: 1px;
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    z-index: 1;
+}
+.content .content-item .content-text p{
+    text-align: left;
+    font-size: 15px;
+}
+.content-text .skill-title{
+    font-size: 16px;
+    color: #3399CC;
+}
+.content-text ul{
+    text-align: center;
+    list-style: none;
+}
+.content-left{
+    text-align: left;
+}
+.sub-head{
+    font-size: 16px;
+    color: #8a8fa3;
+}
+.sub-head span{
+    font-size: 14px;
+    font-weight: initial;
+}
