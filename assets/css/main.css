@@ -343,7 +343,7 @@
         section#about{
             padding-top: 50px;
         }
-        section#about .analytics-box{
+        section .analytics-box{
             margin-top: -100px;
         }
         div.info{
@@ -819,15 +819,15 @@
     #loader {
         display: block;
         position: relative;
-        left: 50%;
-        top: 50%;
-        width: 70px;
-        height: 70px;
+        left: calc(50% - 30px);
+        top: calc(50% - 30px);
+        width: 60px;
+        height: 60px;
         border-radius: 50%;
         border: 5px solid #eee;
         border-top-color: #754ef9;
-        -webkit-animation: spin 1.5s linear infinite;
-        animation: spin 1.5s linear infinite;
+        -webkit-animation: spin 1.0s linear infinite;
+        animation: spin 1.0s linear infinite;
     }
     @keyframes spin {
         from {transform:rotate(0deg);}
