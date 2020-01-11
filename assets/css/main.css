@@ -2,10 +2,10 @@
     :root{
         --mainWhite: #ffffff;
         --blue: #007bff;
-        --deepblue: #281483;
+        --deepblue: #754ef9;
         --purple: #6f42c1;
         --pink: #be7ad8;
-        --light: #f9f9f9;
+        --light: #f5f5f5;
         --red: #dc3545;
         --darkred: #7e020f;
         --orange: #fd7e14;
@@ -20,6 +20,7 @@
     }
     body{
         font-family: 'Poppins', sans-serif;
+        background-color: var(--light);
     }
     h1, h2, h3, h4, h5, h6, p{
         font-family: 'Poppins', sans-serif;
@@ -48,11 +49,31 @@
         border-radius: 50px;
         text-transform: none;
     }
+    .profile-img img{
+        width: 100%;
+        height: auto;
+    }
+    .title-box{
+        margin-bottom: 3rem;
+    }
+    .title-left{
+        text-align: left;
+        font-size: 2rem;
+        position: relative;
+    }
+    .title-left::before{
+        content: '';
+        position: absolute;
+        height: 4px;
+        background-color: var(--deepblue);
+        width: 100px;
+        bottom: -10px;
+    }
     .title-border{
         height: 4px;
         width: 80px;
         background-color: var(--deepblue);
-        border-radius: 35%;
+        border-radius: 17px;
         align-self: center;
         margin-left: auto;
         margin-right: auto;
@@ -64,7 +85,7 @@
         margin-bottom: 50px;
     }
     .section-header > span{
-        background-color: #281483;
+        background-color: #754ef9;
         color: var(--light) !important;
         padding: 7px;
         display: inline-block;
@@ -162,24 +183,26 @@
 /*====== /General ======*/
 
 /*====== Header ======*/
-    header {
-        color: #fff;
-        width: 100%;
+    .bg-img {
         position: relative;
-        z-index: 1;
-        background-image: url(../img/project1.jpeg);
         background-size: cover;
         background-position: center center;
         background-attachment: fixed;
-        min-height: calc(100vh - 60px);
     }
-    header::before {
+    header {
+        color: #fff;
+        width: 100%;
+        background-image: url(../img/project1.jpeg);
+        min-height: calc(100vh);
+    }
+    header::before, #services:before, #testimonial:before{
         content: "";
         position: absolute;
         right: 0;
         bottom: 0;
         width: 100%;
         height: 100%;
+        opacity: 1;
         background: linear-gradient(150deg, #281483db 15%, #8f6ed5cc 70%, #d782d9c4 94%);
     }
     header > .container{
@@ -200,6 +223,9 @@
     .hero-img img {
         margin-top: 50px;
     }
+    .welcome-content h1{
+        font-size: 3rem;
+    }
     .welcome-content > span{
         background-color: #fff;
         color: var(--deepblue);
@@ -210,6 +236,7 @@
     .welcome-content > p{
         line-height: 2;
         letter-spacing: 0.9px;
+        font-size: 1.5rem;
     }
     .welcome-content > a:hover{
         background-color: #8f6ed5;
@@ -231,9 +258,18 @@
         width: 100%;
     }
     .navbar-fixed-top.scrolled{
-        padding: 0px 20px;
-        background: #281483;
-        box-shadow: 0px 0px 29px 0px rgba(134, 134, 134, 0.25);
+        transition: all .5s ease-in-out;
+        background-color: #fff;
+        padding-top: 15px;
+        padding-bottom: 15px;
+        box-shadow: 0px 6px 9px 0px rgba(0, 0, 0, 0.06);
+    }
+    .navbar-fixed-top.scrolled a{
+        color: #754ef9 !important;
+    }
+     .navbar-fixed-top.scrolled .nav-item.active a:before, .navbar-fixed-top.scrolled .nav-item:hover a:before{
+        height: 50px;
+        background-color: #754ef9;
     }
     .navbar-brand{
         font-family: 'Kaushan Script', cursive;
@@ -244,7 +280,9 @@
         width: 35px;
     }
     .navbar-nav .nav-item {
-        font-family: 'Poppins', sans-serif;
+        position: relative;
+        padding: 0 10px;
+        text-transform: uppercase;
     }
     .navbar-toggler:focus{
         outline: none;
@@ -252,10 +290,15 @@
     .navbar .navbar-toggler.collapsed {
         background: transparent;
     }
-    .navbar .navbar-toggler.collapsed .navbar-toggler-icon, .navbar .navbar-toggler .navbar-toggler-icon{
+    .navbar .navbar-toggler .navbar-toggler-icon{
         color: #fff;
         margin-top: 11px;
     }
+    .navbar.scrolled .navbar-toggler .navbar-toggler-icon{
+        color: #000;
+        margin-top: 11px;
+    }
+
     .navbar-fixed-top{
         top: 0;
         border-width: 0 0 1px;
@@ -263,14 +306,17 @@
         z-index: 1000;
     }
     .nav-item.active a, .nav-item:hover a {
-        color: var(--deepblue) !important;
+        color: #281483db !important;
+    }
+    .nav-item.active a::before{
+        height: 45px;
     }
     .nav-item a::before {
         position: absolute;
         content: '';
         width: 3px;
         height: 0;
-        background-color: var(--deepblue);
+        background-color: #fff;
         left: 50%;
         top: -50px;
         -webkit-transform: translateX(-50%);
@@ -297,29 +343,14 @@
         section#about{
             padding-top: 50px;
         }
-        .article-container{
-            background-color: var(--gray);
-            padding: 50px 30px;
-            color: var(--mainWhite);
-        }
-        .article-container > p{
-            margin-top: 30px;
-            letter-spacing: 0.5px;
-            text-align: left;
-            color: var(--mainWhite);
-        }
-        .article-container > h3{
-            text-align: center;
-            font-size: 30px;
-        }
-        .image-container{
-            background-color: #fff;
+        section#about .analytics-box{
+            margin-top: -100px;
         }
         div.info{
             margin-top: 5px;
             margin-bottom: 0px;
             font-size: 14px;
-            border-bottom: 1px solid var(--gray-dark);
+            border-bottom: 1px solid #8a8fa3;
             padding-bottom: 6px;
         }
         .info span{
@@ -341,20 +372,19 @@
         }
         .job .btn-download:hover {
             background: var(--mainWhite);
-            color: #8f6ed5;
-            border: 1px solid #281483;
+            color: #754ef9;
+            border: 1px solid #754ef9;
         }
         .btn-download {
-            border: 1px solid var(--gray);
+            border: 1px solid #754ef9;
             line-height: 35px;
-            font-weight: 600;
+            color: #fff;
         }
         .btn-hire {
             background-color: var(--mainWhite);
-            border: 1px solid #281483;
-            color: #8f6ed5;
+            border: 1px solid #754ef9;
+            color: #754ef9;
             line-height: 35px;
-            font-weight: 500;
         }
         .btn-send{
             border: 1px solid var(--mainWhite);
@@ -388,8 +418,7 @@
         }
         .about-skills .skill-item .skill-bar .bar-inner {
             width: 100%;
-            height: 5px;
-            border-radius: 5px;
+            height: .7rem;
             background-color: #d9d9d9;
             position: relative;
         }
@@ -397,8 +426,7 @@
             position: absolute;
             top: 0;
             left: 0;
-            height: 5px;
-            border-radius: 5px;
+            height: .7rem;
             background-color: #754ef9;
             -webkit-transition: all 2s ease-out 0s;
             -moz-transition: all 2s ease-out 0s;
@@ -407,11 +435,31 @@
             transition: all 2s ease-out 0s;
             width: 0;
         }
+        .box-shadow{
+            position: relative;
+            padding: 3rem 1.25rem;
+            background-color: #fff;
+            margin-bottom: 3rem;
+            /* z-index: 2; */
+            box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.06), 0 2px 5px 0 rgba(0, 0, 0, 0.2);
+        }
+        #about .box-shadow{
+            padding-top: 4rem;
+            padding-bottom: 4rem;
+        }
+        @media (min-width: 768px) {
+            #about .box-shadow{
+                padding: 3rem;
+            }
+        }
+
     /*====== /About ======*/
 
     /*====== Services ======*/
         #services{
-            background-color: var(--light);
+            color: #fff;
+            width: 100%;
+            background-image: url('../img/student.jpg');
         }
         .featured-single-service {
             align-items: flex-start!important;
@@ -539,6 +587,50 @@
         }
     /*====== /Portfolio ======*/
 
+    /*====== testimonial =====*/
+    .testimonial-box{
+        text-align: center;
+        color: var(--light);
+    }
+    .testimonial-box .testimonial-author .author{
+        color: #fff;
+        text-transform: uppercase;
+        font-weight: 600;
+        margin: 1rem 0;
+        display: block;
+        font-size: 1.4rem;
+    }
+    .testimonial-box .testimonial-author img{
+        width: 150px;
+        height: 150px;
+        margin: 0 auto;
+        border-radius: 50%;
+    }
+    .testimonial-box .testimonial-content{
+        margin-bottom: 50px;
+    }
+    .testimonial-box .testimonial-content p{
+        color: var(--light);
+        font-size: 1rem;
+        font-weight: 300;
+    }
+    @media (min-width: 768px){
+        .testimonial-box .testimonial-content {
+            padding: 0 5rem;
+        }
+    }
+    @media (min-width: 992){
+        .testimonial-box .testimonial-content {
+            padding: 0 8rem;
+        }
+    }
+    @media (min-width: 1200px){
+        .testimonial-box .testimonial-content {
+            padding: 0 13rem;
+        }
+    }
+    /*====== /testimonial =====*/
+
     /*====== Contact ======*/
         .single-form {
             margin-top: 30px;
@@ -547,12 +639,14 @@
             border-radius: 0 !Important;
             border: 0 !Important;
             border-bottom: 1px solid var(--deepblue) !Important;
-            padding: .375rem 0 !Important;
+            padding: .375rem 0px !Important; 
+            background: transparent !Important;
         }
         input:focus, textarea:focus{
             box-shadow: none !Important;
             border-bottom: 2px solid var(--deepblue) !Important;
-            padding-bottom: 2.475rem !Important;
+            padding: 10px 10px 1.5rem !Important;
+
         }
         .ajax-loader{
         display: none;
@@ -641,7 +735,7 @@
         line-height: 2;
     }
     .footer-address ul li i {
-        color: #281483;
+        color: #754ef9;
         margin-right: 5px;
     }
     .footer-address ul li:first-child i{
@@ -649,24 +743,27 @@
     }
     #toTop {
         position: fixed;
-        bottom: 40px;
-        right: 25px;
-        text-decoration: none;
-        color: #fff !important;
-        font-size: 20px;
         display: none;
-        font-weight: bold;
+        background: #fff;
+        color: var(--deepblue);
+        width: 44px;
+        height: 44px;
         text-align: center;
-        z-index: 100;
-        cursor: pointer;
+        line-height: 1;
+        font-size: 16px;
+        border-radius: 50%;
+        right: 15px;
+        bottom: 15px;
+        transition: background 0.5s;
+        z-index: 11;
         box-shadow: 3px 1px 6px 0px #343a40;
     }
-    #toTop span {
-        display: block;
-        position: relative;
-        background: var(--deepblue);
-        padding: 5px 15px;
-        transform: rotate(180deg);
+    #toTop:hover{
+        background-color: var(--deepblue);
+        color: #fff;
+    }
+    #toTop i {
+        padding-top: 12px;
     }
     .footer-widget {
         background-color: var(--light);
@@ -724,13 +821,11 @@
         position: relative;
         left: 50%;
         top: 50%;
-        width: 50px;
-        height: 50px;
+        width: 70px;
+        height: 70px;
         border-radius: 50%;
         border: 5px solid #eee;
-        border-top-color: #281483;
-        /* border-right-color: var(--pink); */
-        border-bottom-color: #754ef9;
+        border-top-color: #754ef9;
         -webkit-animation: spin 1.5s linear infinite;
         animation: spin 1.5s linear infinite;
     }
@@ -744,7 +839,6 @@
 @media (max-width: 768px){
     .navbar{
         padding: 0px 20px;
-        background: #281483;
     }
     .nav-item.active a, .nav-item:hover a {
         color: var(--gray) !important;
@@ -774,8 +868,7 @@
 }
 @media (min-width: 768px){
     .navbar-fixed-top.scrolled{
-        background: linear-gradient(150deg, #281483 15%, #8f6ed5 70%, #d782d9 94%);
-        /*border-bottom: 1px solid #281483;*/
+        background-color: #fff;
     }
     .navbar-expand-lg .navbar-collapse {
         display: -ms-flexbox!important;

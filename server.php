@@ -80,4 +80,3 @@ if (isset($_POST['name']) && isset($_POST['phone']) && isset($_POST['email']) &&
     echo json_encode($data, JSON_PRETTY_PRINT);
 
 }
-?>

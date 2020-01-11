@@ -40,7 +40,7 @@ $(function () {
 	});
 
 	// Scroll to Top nav
-	$('body').append('<div id="toTop"><span><i class="fa fa-angle-down"></i></span></div>');
+	$('body').append('<div id="toTop"><i class="fa fa-chevron-up"></i></div>');
 
 	$(window).on("scroll", function (e) {
 		if ($(this).scrollTop() != 0) {
@@ -65,6 +65,8 @@ $(function () {
 		var scrollbarLocation = $(this).scrollTop();
 		$(".page-scroll").each(function () {
 			var sectionOffset = $(this).offset().top - 73;
+			console.log(sectionOffset + ' ' + scrollbarLocation);
+			console.log($(this));
 			if (sectionOffset <= scrollbarLocation) {
 				$(this).parent().addClass('active');
 				$(this).parent().siblings().removeClass('active');
@@ -73,13 +75,13 @@ $(function () {
 	})
 
 	// Progress line skills
-	if ($('.progress-line').length) {
-		$('.progress-line').appear(function () {
-			var el = $(this);
-			var percent = el.data('width');
-			$(el).css('width', percent + '%');
-		}, { accY: 0 });
-	}
+	// if ($('.progress-line').length) {
+	// 	$('.progress-line').appear(function () {
+	// 		var el = $(this);
+	// 		var percent = el.data('width');
+	// 		$(el).css('width', percent + '%');
+	// 	}, { accY: 0 });
+	// }
 
 	// Overlay on hover
 	$(".single-project").hover(
@@ -132,5 +134,21 @@ $(function () {
 	setTimeout(function () {
 		$('this').fadeOut('fast').removeClass('show');
 	}, 400);
+
+	var type = document.getElementById('typewrite');
+
+	var typewriter = new Typewriter(type, {
+		loop: true
+	});
+
+	typewriter.typeString("A Freelance Full-Stack Developer")
+		.pauseFor(1000)
+		.deleteChars(30)
+		.typeString('Computer Science Student')
+		.pauseFor(000)
+		.deleteAll()
+		.typeString('Great to have you here!')
+		.pauseFor(3000)
+		.start();
 });
 
