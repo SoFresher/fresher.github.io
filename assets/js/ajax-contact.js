@@ -25,16 +25,16 @@ $(function () {
 
             $.ajax({
                 type: "POST",
-                url: "server.php",
+                // url: "server.php",
                 data: formData,
                 success: function (data) {
-                    console.log(data);
+                    // console.log(data);
                     if (data.sent == 1) {
                         if ($('.alert').hasClass('alert-danger')) {
                             $('.alert').removeClass("alert-danger");
                         }
                         $('.alert').addClass("show alert-success");
-                        $('.alert').children('.msg').html(data.success);
+                        $('.alert').children('.msg').html('Thank you for contcting me.');
                     } else if (data == '') {
                         if ($('.alert').hasClass('alert-success')) {
                             $('.alert').removeClass("alert-success");
