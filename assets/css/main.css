@@ -191,11 +191,11 @@
     }
     header {
         color: #fff;
-        width: 100%;
+        /* width: 100%; */
         background-image: url(../img/project1.jpeg);
         min-height: calc(100vh);
     }
-    header::before, #services:before, #testimonial:before{
+    .bg-img:before{
         content: "";
         position: absolute;
         right: 0;
@@ -267,7 +267,7 @@
     .navbar-fixed-top.scrolled a{
         color: #754ef9 !important;
     }
-     .navbar-fixed-top.scrolled .nav-item.active a:before, .navbar-fixed-top.scrolled .nav-item:hover a:before{
+    .navbar-fixed-top.scrolled .nav-item.active a:before, .navbar-fixed-top.scrolled .nav-item:hover a:before{
         height: 50px;
         background-color: #754ef9;
     }
@@ -295,10 +295,9 @@
         margin-top: 11px;
     }
     .navbar.scrolled .navbar-toggler .navbar-toggler-icon{
-        color: #000;
+        color: #754ef9 ;
         margin-top: 11px;
     }
-
     .navbar-fixed-top{
         top: 0;
         border-width: 0 0 1px;
@@ -339,12 +338,40 @@
 /*====== /Header ======*/
 
 /*====== Main ======*/
+
+    #career .analytics-box{
+        color: #fff;
+        background-image: url('../img/student.jpg');
+        text-align: center;
+    }
+    .analytics-box .featured-icon-box .featured-icon{
+        height: 60px;
+        width: 60px;
+        line-height: 1.8;
+        font-size: 1.5rem;
+        margin: 0px 0px 10px;
+    }
+    .featured-counter .counter{
+        font-size: 2rem;
+        margin-bottom: 0;
+        color: #fff;
+        line-height: 1.5;
+    }
+    .featured-counter .featured-counter-title{
+        text-transform: uppercase;
+        font-weight: 600;
+    }
+    @media (min-width: 577px){
+        .analytics-box .featured-icon-box{
+            margin-bottom: 1.8rem;
+        }
+    }
     /*====== About ======*/
         section#about{
             padding-top: 50px;
         }
         section .analytics-box{
-            margin-top: -100px;
+            margin-top: -50px;
         }
         div.info{
             margin-top: 5px;
@@ -458,7 +485,7 @@
     /*====== Services ======*/
         #services{
             color: #fff;
-            width: 100%;
+            /* width: 100%; */
             background-image: url('../img/student.jpg');
         }
         .featured-single-service {
@@ -844,6 +871,9 @@
         color: var(--gray) !important;
     }
     .hidden-sm {
+        display: none;
+    }
+    .nav-item a::before{
         display: none;
     }
 

@@ -2,7 +2,13 @@ $(function () {
 	// Initializing easeScroll for smoth scrolling
 	$("html").easeScroll();
 
-	// navbar scroll
+	$('.navbar-toggler').on('click', function () {
+		if (!$('.navbar-fixed-top').hasClass('scrolled')) {
+			$('.navbar-fixed-top').addClass('scrolled');
+		}
+	});
+
+	// fixed-navbar when scrolled
 	$(window).scroll(function () {
 		if ($(".navbar").offset().top > 50) {
 			$(".navbar-fixed-top").addClass("scrolled");
@@ -20,8 +26,8 @@ $(function () {
 		}
 	});
 
-	// Mouse over single featured service
-	$(".featured-single-service").hover(
+	// border-radius mouse hover effect
+	$(".featured-icon-box").hover(
 		function () {
 			$(this).find(".icon-shape").css("border-radius", "50px");
 		},
@@ -56,23 +62,28 @@ $(function () {
 	});
 
 	// Preloader
-	$(window).ready(function () {
-		$('#preloader').delay(500).fadeOut('fade');
+	$(window).on('load', function () {
+		if ($('#preloader').length) {
+			$('#preloader').delay(500).fadeOut('slow', function () {
+				$(this).remove();
+			});
+		}
 	});
-
-	// Scroll to set active nav item
-	$(window).scroll(function () {
-		var scrollbarLocation = $(this).scrollTop();
-		$(".page-scroll").each(function () {
-			var sectionOffset = $(this).offset().top - 73;
-			console.log(sectionOffset + ' ' + scrollbarLocation);
-			console.log($(this));
-			if (sectionOffset <= scrollbarLocation) {
-				$(this).parent().addClass('active');
-				$(this).parent().siblings().removeClass('active');
+	function onScroll() {
+		var scrollPos = $(document).scrollTop();
+		$('#navbarTogglerDemo02 a').each(function () {
+			var currLink = $(this);
+			var refElement = $(currLink.attr("href"));
+			if (refElement.position().top <= scrollPos && refElement.position().top + refElement.height() > scrollPos) {
+				$('#navbarTogglerDemo02 ul li a').parent().removeClass("active");
+				currLink.parent().addClass("active");
+			}
+			else {
+				currLink.parent().removeClass("active");
 			}
 		});
-	})
+	}
+	$(document).on("scroll", onScroll);
 
 	// Progress line skills
 	// if ($('.progress-line').length) {
