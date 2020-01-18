@@ -64,11 +64,13 @@ $(function () {
 	// Preloader
 	$(window).on('load', function () {
 		if ($('#preloader').length) {
-			$('#preloader').delay(500).fadeOut('slow', function () {
+			$('#preloader').delay(50).fadeOut('slow', function () {
 				$(this).remove();
 			});
 		}
 	});
+
+	// 
 	function onScroll() {
 		var scrollPos = $(document).scrollTop();
 		$('#navbarTogglerDemo02 a').each(function () {
@@ -161,5 +163,17 @@ $(function () {
 		.typeString('Great to have you here!')
 		.pauseFor(3000)
 		.start();
+
+	$('.counter').each(function () {
+		$(this).prop('Counter', 0).animate({
+			Counter: $(this).text()
+		}, {
+			duration: 4000,
+			easing: 'swing',
+			step: function (now) {
+				$(this).text(Math.ceil(now));
+			}
+		});
+	});
 });
 
