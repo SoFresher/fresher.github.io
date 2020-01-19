@@ -27,7 +27,7 @@ $(function () {
 	});
 
 	// border-radius mouse hover effect
-	$(".featured-icon-box").hover(
+	$(".featured-icon-box, .contact-box").hover(
 		function () {
 			$(this).find(".icon-shape").css("border-radius", "50px");
 		},
@@ -42,8 +42,14 @@ $(function () {
 		$('html, body').stop().animate({
 			scrollTop: $($anchor.attr('href')).offset().top - 59
 		}, 900, 'easeInOutExpo');
+		$('.navbar-collapse').collapse('hide');
 		event.preventDefault();
 	});
+
+	// Closes responsive menu when a scroll trigger link is clicked
+	// $('nav-link.js-scroll').on("click", function () {
+	// 	$('.navbar-collapse').collapse('hide');
+	// });
 
 	// Scroll to Top nav
 	$('body').append('<div id="toTop"><i class="fa fa-chevron-up"></i></div>');
@@ -71,7 +77,7 @@ $(function () {
 	});
 
 	// 
-	function onScroll() {
+	$(document).on("scroll", function onScroll() {
 		var scrollPos = $(document).scrollTop();
 		$('#navbarTogglerDemo02 a').each(function () {
 			var currLink = $(this);
@@ -84,8 +90,7 @@ $(function () {
 				currLink.parent().removeClass("active");
 			}
 		});
-	}
-	$(document).on("scroll", onScroll);
+	});
 
 	// Progress line skills
 	// if ($('.progress-line').length) {

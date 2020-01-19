@@ -287,6 +287,18 @@
         padding: 0 10px;
         text-transform: uppercase;
     }
+    .navbar-toggler span {
+        display: block;
+        background-color: #fff;
+        height: 3px;
+        width: 25px;
+        margin-top: 5px;
+        margin-bottom: 5px;
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+        left: 0;
+        opacity: 1;
+    }
     .navbar-toggler:focus{
         outline: none;
     }
@@ -297,9 +309,8 @@
         color: #fff;
         margin-top: 11px;
     }
-    .navbar.scrolled .navbar-toggler .navbar-toggler-icon{
-        color: #754ef9 ;
-        margin-top: 11px;
+    .navbar.scrolled .navbar-toggler span{
+        background-color: #754ef9 ;
     }
     .navbar-fixed-top{
         top: 0;
@@ -347,7 +358,7 @@
         background-image: url('../img/student.jpg');
         text-align: center;
     }
-    .analytics-box .featured-icon-box .featured-icon{
+    .analytics-box .featured-icon-box .featured-icon, .contact-icon{
         height: 60px;
         width: 60px;
         line-height: 1.8;
@@ -597,6 +608,9 @@
         .single-project{
             height: 100%;
         }
+        .single-project img{
+            height: 100%;
+        }
         .single-project .tag{
             background-color: red;
             color: var(--mainWhite);
@@ -604,7 +618,7 @@
             width: 30%;
             position: relative;
             font-size: 11px;
-            bottom: 80%;
+            bottom: 90%;
             left: 0;
         }
     /*====== /Portfolio ======*/
@@ -691,11 +705,17 @@
             transition: all .3s ease-out 0s;
             overflow-wrap: break-word;
         }
-        .contact-box:hover {
+        .contact-box:hover, .featured-single-service:hover{
             box-shadow: 0 0 21px 0 rgba(152,152,152,.23);
+            border: 1px solid var(--deepblue);
+        }
+        .contact-icon{
+            background-color: #fff;
+            border: 1px solid var(--deepblue);
+            box-shadow: none;
         }
         .contact-box .contact-icon i {
-            font-size: 35px;
+            font-size: 23px;
             color: var(--deepblue);
         }
         .contact-box .contact-content {
