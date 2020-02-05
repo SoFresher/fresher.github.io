@@ -15,6 +15,10 @@ $(function () {
 		} else {
 			$(".navbar-fixed-top").removeClass("scrolled");
 		}
+
+		if (!$("nav.navbar").hasClass("scrolled")) {
+			$(".navbar-collapse").collapse('hide');
+		}
 	});
 
 	// toggle scrolled if scrolled before reload
