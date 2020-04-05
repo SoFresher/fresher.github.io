@@ -305,11 +305,11 @@ header .welcome-content {
 }
 .navbar-toggler span {
   display: block;
-  background-color: #fff;
+  background-color: var(--deepblue);
   height: 2px;
-  width: 19px;
-  margin-top: 5px;
-  margin-bottom: 5px;
+  width: 14px;
+  margin-top: 4px;
+  margin-bottom: 4px;
   -webkit-transform: rotate(0deg);
   transform: rotate(0deg);
   left: 0;
@@ -318,19 +318,25 @@ header .welcome-content {
 .navbar-toggler:focus {
   outline: none;
 }
-.navbar .navbar-toggler.collapsed {
-  background: transparent;
+.navbar .navbar-toggler {
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  background: var(--mainWhite);
 }
 .navbar-toggler {
   position: relative;
 }
+.navbar.scrolled .navbar-toggler {
+  background-color: var(--deepblue);
+}
 .navbar.scrolled .navbar-toggler span {
-  background-color: #754ef9;
+  background-color: var(--mainWhite);
 }
 .navbar-toggler:not(.collapsed) span:nth-child(1) {
   position: absolute;
   left: 12px;
-  top: 10px;
+  top: 14px;
   -webkit-transform: rotate(-135deg);
   transform: rotate(135deg);
   opacity: 0.9;
@@ -343,7 +349,7 @@ header .welcome-content {
 .navbar-toggler:not(.collapsed) span:nth-child(3) {
   position: absolute;
   left: 12px;
-  top: 10px;
+  top: 14px;
   -webkit-transform: rotate(-135deg);
   transform: rotate(-135deg);
   opacity: 0.9;
