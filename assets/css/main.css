@@ -1066,7 +1066,13 @@ a.footer-logo {
   );
   color: #fff;
   opacity: 1;
+  /* position: fixed;
+  width: 250px; */
 }
+
+/* .sidenav ul {
+  margin-top: 82px;
+} */
 
 .sidenav .nav-item a {
   padding: 8px 8px 8px 32px;
@@ -1077,8 +1083,10 @@ a.footer-logo {
   transition: 0.3s;
 }
 
-.sidenav a:hover {
-  color: #f1f1f1;
+.sidenav .nav-item.active {
+  background-color: var(--deepblue);
+  border-radius: 10px;
+  color: var(--mainWhite);
 }
 
 @media screen and (max-height: 450px) {
